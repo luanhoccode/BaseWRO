@@ -11,18 +11,18 @@ from pybricks.tools import wait, StopWatch, multitask, run_task
 hub = PrimeHub()
 hub.imu.reset_heading(0)
 
-DongCo_Trai    = Motor(Port.C, Direction.COUNTERCLOCKWISE)
-DongCo_Phai    = Motor(Port.D)
-DongCo_TayTrai = Motor(Port.B, Direction.COUNTERCLOCKWISE)
-DongCo_TayPhai = Motor(Port.A, Direction.CLOCKWISE)
+DongCo_Trai    = Motor(Port.E, Direction.COUNTERCLOCKWISE)
+DongCo_Phai    = Motor(Port.F)
+DongCo_TayTrai = Motor(Port.C, Direction.COUNTERCLOCKWISE)
+DongCo_TayPhai = Motor(Port.D, Direction.CLOCKWISE)
 
-CamBien_DoDuong_F = ColorSensor(Port.F)
-CamBien_DocMau_E  = ColorSensor(Port.E)
+CamBien_DoDuong_F = ColorSensor(Port.A)
+CamBien_DocMau_E  = ColorSensor(Port.B)
 
 time = StopWatch()
 time.reset()
 
-BaseRobot = DriveBase(DongCo_Trai, DongCo_Phai, 62.4, 196)
+BaseRobot = DriveBase(DongCo_Trai, DongCo_Phai, 62.4, 177)
 
 # --- Biến PD ---
 lastError = 0
