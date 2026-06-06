@@ -23,6 +23,30 @@ from arms     import ResetCanhTay, Tay_Truoc, Tay_Sau
 #     DC_Xoay(70, 90)
 #     ...
 # =====================================================
+def Turn1():
+    setup()
+    DC_TienLui_Gyro_CM(-80, 10)
+    DC_Xoay(80, -90, 2)
+    DongCo_TayPhai.run_time(500, 600, Stop.HOLD, wait=False)
+    DongCo_TayTrai.run_time(500, 600, Stop.HOLD, wait=False)
+    DC_TienLui_Gyro_CM(100, 29.5, True)
+    DC_TienLui_Gyro_CM(-40, 1)
+    DongCo_TayPhai.dc(100)
+    DongCo_TayTrai.dc(100)
+    DongCo_TayTrai.run_time(-500, 600, Stop.HOLD)
+    DongCo_TayPhai.run_time(-500, 600, Stop.HOLD)
+    DC_TienLui_Gyro_CM(-80, 35, True)
+    DC_Xoay(80, 90, 2)
+    DongCo_TayTrai.run_angle(300, 35, Stop.HOLD, wait=False)
+    DongCo_TayPhai.run_angle(300, 35, Stop.HOLD, wait=False)
+    DC_DuongCong(100, 43, 90)
+    DC_TienLui_Gyro_CM(100, 10, True)
+    DongCo_TayTrai.run_angle(-300, 35, Stop.HOLD, wait=False)
+    DongCo_TayPhai.run_angle(-300, 35, Stop.HOLD, wait=False)
+    DC_TienLui_ThoiGian_Ms(100, 600, 2, 50)
+    DC_TienLui_Gyro_CM(-40, 3)
+    DC_Xoay(80, -90, 2)
+    DC_TienLui_Gyro_CM(100, 40, 2, 100, True)
 
 def setup():
     DC_TienLui_ThoiGian_Ms(-40, 500, 2)
@@ -31,10 +55,8 @@ def setup():
     state.DongCo_TayTrai.reset_angle(0)
 
 def Full_Run():
-    # Thêm các lượt chạy vào đây, ví dụ:
-    # TenLuotChay1()
-    # DOI_BAMNUT_TRAI()
-    # TenLuotChay2()
+    Turn1()
+    DOI_BAMNUT_TRAI()
     pass
 
 def Main():
